@@ -38,7 +38,16 @@ public class ConvertToDto {
 	      .map(element -> modelMapper.map(element, targetClass))
 	      .collect(Collectors.toList());
 	}
-	
+
+
+	/**
+	 *
+	 * @param source
+	 * @param targetClass
+	 * @return
+	 * @param <T>
+	 * @param <S>
+	 */
 	public <T, S> T mapList(S source, Class<T> targetClass) {
 	    return modelMapper.map(source, targetClass);
 	}

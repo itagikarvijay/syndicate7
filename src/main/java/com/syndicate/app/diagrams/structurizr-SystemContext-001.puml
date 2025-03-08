@@ -1,0 +1,33 @@
+@startuml
+set separator none
+title Software System - System Context
+
+top to bottom direction
+
+skinparam {
+  arrowFontSize 10
+  defaultTextAlignment center
+  wrapWidth 200
+  maxMessageSize 100
+  }
+
+hide stereotype
+
+skinparam rectangle<<SoftwareSystem>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+  shadowing false
+}
+skinparam rectangle<<User>> {
+  BackgroundColor #000080
+  FontColor #ffffff
+  BorderColor #9a9a9a
+  shadowing false
+}
+
+rectangle "==User\n<size:10>[Person]</size>\n\nA user of my software system." <<User>> as User
+rectangle "==Software System\n<size:10>[Software System]</size>\n\nMy software system." <<SoftwareSystem>> as SoftwareSystem
+
+User .[#707070,thickness=2].> SoftwareSystem : "<color:#707070>Uses"
+@enduml
